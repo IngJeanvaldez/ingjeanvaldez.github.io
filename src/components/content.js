@@ -1,5 +1,5 @@
 // =============================================================================
-// FICHIER DE CONTENU CENTRALISÉ - PORTFOLIO JEAN PIERRE
+// FICHIER DE CONTENU CENTRALISÉ
 // =============================================================================
 // Ce fichier contient tout le contenu textuel et les données du portfolio.
 // Modifiez ce fichier pour mettre à jour les informations affichées sur le site.
