@@ -1,0 +1,146 @@
+/**
+ * GLOBAL STYLES
+ * ==============
+ * 
+ * Global CSS for the academic portfolio.
+ * 
+ * HOW TO CUSTOMIZE FONTS:
+ * - Change the font-family values below
+ * - Current setup uses system serif fonts for academic feel
+ * - To use Google Fonts, add @import at the top
+ */
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for better aesthetics */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
+  
+  /* Body font - clean sans-serif for body text */
+  body {
+    @apply font-sans text-slate-900 dark:text-slate-100;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Serif font for headings - academic/professional feel */
+  .font-serif {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Custom navy color for academic feel */
+  .text-navy-900 {
+    color: #0f1729;
+  }
+  
+  .bg-navy-900 {
+    background-color: #0f1729;
+  }
+  
+  .border-navy-900 {
+    border-color: #0f1729;
+  }
+  
+  /* Smooth transitions for dark mode */
+  .dark-mode-transition {
+    @apply transition-colors duration-300;
+  }
+}
+
+/* Custom animations */
+@layer components {
+  /* Fade in animation for sections */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* Pulse animation for active status indicator */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Dark mode root styles */
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+/* Print styles for CV export */
+@media print {
+  /* Hide navigation and interactive elements */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Adjust colors for print */
+  * {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Remove shadows and borders for cleaner print */
+  .shadow,
+  .shadow-lg,
+  .shadow-xl,
+  .border {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
