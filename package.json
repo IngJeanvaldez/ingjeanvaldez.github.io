@@ -4,7 +4,7 @@
   "description": "Portfolio professionnel - Ingénieur Électricien",
   "private": true,
   "author": " Azanfack Mikael",
-  "homepage": "https://ingjeanvaldez.github.io/",
+  "homepage": "https://ingjeanvaldez.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
